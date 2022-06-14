@@ -1,0 +1,42 @@
+@import "./styles/mixin.scss";
+
+page {
+  background-color: $bg-color;
+  height: 100vh;
+}
+view,
+text,
+button {
+  font-family: PingFang SC;
+}
+
+.b-left-line {
+  position: relative;
+  &::before {
+    @include column-line();
+    left: 0;
+  }
+}
+.b-right-line {
+  position: relative;
+  &::after {
+    @include column-line();
+    right: 0;
+  }
+}
+
+.b-bottom-line {
+  position: relative;
+  &::after {
+    @include row-line();
+    bottom: 0;
+  }
+}
+
+.b-top-line {
+  position: relative;
+  &::before {
+    @include row-line();
+    top: 0;
+  }
+}
